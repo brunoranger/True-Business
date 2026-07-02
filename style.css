@@ -1,0 +1,66 @@
+html, body {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  background: #fff;
+  color: #111;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+#space {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  overflow: hidden;
+}
+
+#deposit {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 22vh 10vw;
+  border: 0;
+  outline: 0;
+  resize: none;
+  background: transparent;
+  color: #111;
+  font: inherit;
+  font-size: clamp(22px, 4vw, 42px);
+  line-height: 1.35;
+  text-align: center;
+  opacity: 0;
+  caret-color: transparent;
+}
+
+#deposit.active {
+  opacity: 1;
+  caret-color: #111;
+}
+
+#answer {
+  position: absolute;
+  left: 10vw;
+  right: 10vw;
+  top: 50%;
+  transform: translateY(-50%);
+  max-height: 70vh;
+  overflow: auto;
+  white-space: pre-wrap;
+  text-align: center;
+  font-size: clamp(22px, 4vw, 42px);
+  line-height: 1.35;
+  opacity: 0;
+  transition: opacity 3s ease;
+}
+
+#answer.long {
+  top: 22vh;
+  transform: none;
+  text-align: left;
+  font-size: clamp(18px, 3vw, 30px);
+}
+
+#answer.visible { opacity: 1; }
