@@ -1,12 +1,9 @@
 const deposit = document.getElementById("deposit");
 
 deposit.addEventListener("keydown", async (event) => {
-  if (event.key !== "Enter" || event.shiftKey) return;
+  if (event.key !== "Enter") return;
 
   event.preventDefault();
-
-  const text = deposit.value.trim();
-  if (!text) return;
 
   const response = await fetch("/api/ai", {
     method: "POST",
@@ -14,7 +11,7 @@ deposit.addEventListener("keydown", async (event) => {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      message: text
+      message: deposit.value
     })
   });
 
